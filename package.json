@@ -1,12 +1,11 @@
 {
-  "name": "window",
+  "name": "d-mond",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "slaus",
   "license": "ISC",
   "browserslist": [
     "> 1%",
@@ -18,10 +17,20 @@
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.5",
     "core-js": "^3.4.2",
     "gulp": "^4.0.2",
     "webpack": "^4.41.2",
     "webpack-stream": "^5.2.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slaus/gulp_starter_16.09.21.git"
+  },
+  "bugs": {
+    "url": "https://github.com/slaus/gulp_starter_16.09.21/issues"
+  },
+  "homepage": "https://github.com/slaus/gulp_starter_16.09.21#readme",
+  "description": ""
 }

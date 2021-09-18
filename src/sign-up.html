@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.ico">
+    <title>Title</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Source+Sans+Pro:wght@400;600&display=swap"
+          rel="stylesheet">
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="sign-up-page">
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex flex-column flex-lg-row justify-content-start align-items-center">
+                        <div class="header-logo">
+                            <a href="index.html" class="header-logo__link">
+                                <img src="assets/img/svg/logo.svg" class="header-logo__img" alt="d-mond.com">
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column flex-md-row justify-content-center justify-content-lg-between align-items-center w-100">
+                            <div class="header-top d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                                <div class="header-menu">
+                                    <ul class="header-menu__list d-flex align-item-center mb-0 ml-0 ml-lg-5">
+                                        <li class="header-menu__item"><a href="index.html" class="header-menu__link">Главная</a>
+                                        </li>
+                                        <li class="header-menu__item"><a href="about.html" class="header-menu__link">О нас</a>
+                                        </li>
+                                        <li class="header-menu__item"><a href="faq.html"
+                                                                         class="header-menu__link">Вопрос-ответ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="header-social d-flex">
+                                    <a href="mailto:admin@d-mond.com" class="header-social__icon" target="_blank">
+                                        <img src="assets/img/svg/icon-email.svg" class="header-social__img" alt="Email">
+                                    </a>
+                                    <a href="https://youtube.com" class="header-social__icon header-social__icon--youtube" target="_blank">
+                                        <img src="assets/img/svg/icon-youtube.svg" class="header-social__img"
+                                             alt="Youtube">
+                                    </a>
+                                    <a href="https://vk.com" class="header-social__icon" target="_blank">
+                                        <img src="assets/img/svg/icon-vk.svg" class="header-social__img" alt="Vk">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="header-buttons text-right ml-0 ml-md-5 ml-lg-auto">
+                                <a href="sign-up.html" class="header-buttons__link">Регистрация</a>
+                                <a href="sign-in.html" class="header-buttons__link header-buttons__link--transparent">Вход</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="main-signup d-flex justify-content-center align-items-center flex-column">
+                <div class="main-signup__title text-center">
+                    Регистрация
+                </div>
+                <div class="main-signup__form">
+                    <form action="assets/server.php" id="main-signup__form" class="d-flex flex-column justify-content-center align-items-center">
+                        <input type="text" name="name" id="name" class="main-signup__input" value="" placeholder="Логин">
+                        <input type="email" name="email" id="email" class="main-signup__input" value="" placeholder="E-mail">
+                        <input type="password" name="password" id="password" class="main-signup__input" value="" placeholder="Пароль">
+                        <input type="tel" name="tel" id="tel" class="main-signup__input" value="" placeholder="Телефон">
+                        <input type="text" name="vk" id="vk" class="main-signup__input" value="" placeholder="Vk">
+                        <input type="text" name="sponsor" id="sponsor" class="main-signup__input" value="" placeholder="Спонсор">
+                        <input type="submit" class="main-signup__submit" value="Зарегистрироваться">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer my-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-7 col-xl-8 d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start align-items-center">
+                    <div class="footer-logo">
+                        <a href="index.html" class="footer-logo__link">
+                            <img src="assets/img/svg/icon-logo.svg" class="footer-logo__img" alt="d-mond.com">
+                        </a>
+                    </div>
+                    <div class="footer-menu">
+                        <ul class="footer-menu__list">
+                            <li class="footer-menu__item"><a href="index.html" class="footer-menu__link">Главная</a></li>
+                            <li class="footer-menu__item"><a href="about.html" class="footer-menu__link">О нас</a></li>
+                            <li class="footer-menu__item"><a href="faq.html" class="footer-menu__link">Вопрос-ответ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-5 col-xl-4 d-flex flex-column-reverse flex-sm-row justify-content-center justify-content-lg-between align-items-center mb-5 mb-lg-0">
+                    <div class="footer-social d-flex">
+                        <a href="https://youtube.com" class="footer-social__icon footer-social__icon--youtube" target="_blank">
+                            <img src="assets/img/svg/icon-youtube.svg" class="footer-social__img" alt="Youtube">
+                        </a>
+                        <a href="https://vk.com" class="footer-social__icon" target="_blank">
+                            <img src="assets/img/svg/icon-vk.svg" class="footer-social__img" alt="Vk">
+                        </a>
+                    </div>
+                    <div class="footer-support d-flex d-lg-block text-left text-lg-right mb-3 mb-sm-0">
+                        <div class="footer-support__description mr-3 mr-lg-0">Техподдержка</div>
+                        <a href="mailto:admin@d-mond.com" class="footer-social__link d-flex align-items-center d-lg-block" target="_blank">
+                            <img src="assets/img/svg/icon-email.svg" class="footer-social__img" alt="">
+                            <span>admin@d-mond.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+<!-- Initialize modal, sliders -->
+
+</body>
+</html>

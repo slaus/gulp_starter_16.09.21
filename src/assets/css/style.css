@@ -16,21 +16,27 @@ body {
     color: #2B303E;
     background: #4DB6EE;
 }
-
+::placeholder {
+    color: rgba(0,0,0,.3);
+}
 .status {
     display: block;
     color: red;
 }
-
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    position: relative;
+    z-index: 0;
+}
 a:hover {
     text-decoration: none;
+    transition: .3s;
 }
-
 a:focus,
 button:focus,
 input:focus,
 textarea:focus {
     outline: none;
+    transition: .3s;
 }
 
 .no-padding {
@@ -56,10 +62,10 @@ ul {
     top: 70px;
     left: 0;
     width: 100%;
-    height: 950px;
-    background: url(../img/svg/icon-ribbon.svg) bottom center no-repeat;
-    background-size: cover;
-    z-index: 0;
+    height: 100%;
+    background: url(../img/svg/icon-ribbon.svg) top center no-repeat;
+    background-size: contain;
+    z-index: -1;
 }
 
 /* HEADER */
@@ -67,6 +73,11 @@ ul {
 width: 100%;
 height: 700px;
 line-height: 100px;
+}
+.sign-up-page .header,
+.sign-in-page .header,
+.faq-page .header {
+    height: auto;
 }
 .header-background__item {
     text-align: right;
@@ -102,8 +113,11 @@ line-height: 100px;
     border: 4px solid rgba(255, 255, 255, 0.28);
     transition: .3s;
 }
-.header-social__icon:hover {
+.header-social__icon.header-social__icon--youtube {
     background: #4486B0;
+}
+.header-social__icon:hover {
+    background: #08208c;
     border: 4px solid rgba(255, 255, 255, 0.49);
     transition: .3s;
 }
@@ -179,6 +193,11 @@ line-height: 100px;
 .main {
     margin-top: 150px;
 }
+.sign-up-page .main,
+.sign-in-page .main,
+.faq-page .main {
+    margin-top: 0;
+}
 .main-video {
     background: #F8F9FA;
     box-shadow: 0px 18px 56px rgba(0,0,0,.15);
@@ -206,6 +225,7 @@ line-height: 100px;
     border-radius: 15px;
     z-index: 1;
     position: relative;
+    overflow: hidden;
 }
 .main-video__frame--play {
     position: absolute;
@@ -228,6 +248,9 @@ line-height: 100px;
     transition: .3s;
     transform: scale(1.08);
 }
+.main-video__frame--block {
+    display: none;
+}
 .main-video__text {
     width: 55%;
     z-index: 1;
@@ -247,8 +270,472 @@ line-height: 100px;
     font-size: 20px;
     line-height: 31px;
 }
+.main-about {
+    width: calc(100% + 30px);
+    height: 100%;
+    background: url(../img/svg/icon-ribbon.svg) center bottom no-repeat;
+    background-size: contain;
+    z-index: -1;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 60px;
+    position: relative;
+}
+.main-about:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -240px;
+    width: 100%;
+    height: 100%;
+    background: url(../img/svg/icon-circles.svg) left top no-repeat;
+    z-index: -2;
+}
+.main-goal {}
+.main-goal__title {
+    font-family: 'Forum', cursive;
+    font-size: 64px;
+    line-height: 128.2%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.11);
+}
+.main-goal__block {
+    min-height: 710px;
+    position: relative;
+}
+.main-goal__diamond {
+    margin-left: -100px;
+    position: relative;
+    z-index: -2;
+}
+.main-goal__diamond--img {}
+.main-goal__description {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 190.2%;
+}
+.main-goal__description span {
+    color: #673FE2;;
+}
+.main-goal__avatar {
+    position: absolute;
+    z-index: -1;
+}
+.main-goal__avatar--1 {
+    top: 8%;
+    left: 50%;
+}
+.main-goal__avatar--2 {
+    top: 30%;
+    left: 0%;
+}
+.main-goal__avatar--3 {
+    top: 70%;
+    left: -7%;
+}
+.main-goal__avatar--4 {
+    top: 85%;
+    left: 10%;
+}
+.main-goal__avatar--5 {
+    top: 7%;
+    left: 15%;
+}
+.main-goal__avatar--6 {
+    top: 66%;
+    left: 35%;
+}
+.main-goal__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.main-goal__avatar-big {
+    width: 70px;
+    height: 70px;
+    border: 6px solid #fff
+}
+.main-goal__avatar-medium {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #fff
+}
+.main-goal__avatar-small {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #fff
+}
+.main-goal__img {
+    width: initial;
+    margin-top: 10px;
+}
 
-/* FOOTER */
+
+
+
+
+
+/*.main-dream {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    padding: 80px 80px 60px;
+    box-sizing: border-box;
+    color: #FFF;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    background: rgb(78, 92, 126);
+    box-shadow: 0px 18px 56px rgba(0, 0, 0, 0.21);
+    backdrop-filter: blur(54px);
+    border-radius: 15px 120px 15px 15px;
+    z-index: 1;
+}
+.main-dream:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -3px;
+    border-radius: inherit;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(78, 92, 126, 0.47));
+}*/
+.main-dream {
+    width: 100%;
+    padding: 80px 60px 60px;
+    background: rgba(78, 92, 126, 0.47);
+    box-shadow: 0px 18px 56px rgba(0, 0, 0, 0.21);
+    backdrop-filter: blur(20px);
+    border-radius: 15px 120px 15px 15px;
+    margin: 50px 0 90px;
+    border: 3px solid rgba(255, 255, 255, .47);
+}
+.main-dream__crown {
+    position: absolute;
+    display: block;
+    width: 550px;
+    height: 520px;
+    bottom: -200px;
+    right: -90px;
+    z-index: 0;
+}
+.main-dream__slogan {
+    font-family: 'Forum', cursive;
+    font-size: 50px;
+    line-height: 128.2%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.11);
+}
+.main-dream__text {
+    font-size: 20px;
+    line-height: 190.2%;
+    color: #F8F9FA;
+    margin-bottom: 100px;
+}
+.main-dream__list {
+    margin-bottom: 50px;
+}
+.main-dream__item {
+    width: 33%;
+    min-height: 250px;
+    background: rgba(13, 9, 9, 0.18);
+    border-radius: 0px 60px 0px 0px;
+    margin: 0 28px;
+    padding: 45px 20px 70px;
+    border-bottom: 6px solid #B6C647;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.main-dream__avatar {
+    display: flex;
+    width: 134px;
+    height: 134px;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FFFFFF;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -110px;
+}
+.main-dream__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 190.2%;
+    color: #B6C647;
+    margin-top: 10px;
+}
+.main-dream__description {
+    font-size: 16px;
+    line-height: 190.2%;
+    color: rgba(248, 249, 250, 0.8);
+}
+.main-dream__bottom {
+    margin-bottom: 20px;
+}
+.main-dream__bottom--left {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0 30px;
+}
+.main-dream__bottom--right {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0 10px;
+}
+.main-dream__bottom--right-text {
+    line-height: 146.7%;
+    color: #F8F9FA;
+}
+.main-dream__bottom--right-button {
+    margin-top: 30px;
+}
+.main-dream__link {
+    font-size: 16px;
+    color: #fff;
+    padding: 22px 88px 23px;
+    background: #2B303E;
+    border-radius: 5px;
+    transition: .3s;
+}
+.main-dream__link:hover {
+    background: #08208c;
+    color: #fff;
+    transition: .3s;
+}
+.main-testimonials {
+    margin-top: 50px;
+}
+.main-testimonials__title {
+    font-family: 'Forum', cursive;
+    font-size: 64px;
+    line-height: 128.2%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.11);
+}
+.main-testimonials__arrows {
+    margin-left: 30px;
+    z-index: 1;
+}
+.main-testimonials__link {
+    width: 51px;
+    height: 51px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: 0 10px;
+    transition: .3s;
+    background: transparent;
+}
+.main-testimonials__link:hover {
+    background: #08208c;
+    transition: .3s;
+}
+.main-testimonials__link:hover .main-testimonials__icon {
+    filter: invert(100%) sepia(38%) saturate(138%) hue-rotate(176deg) brightness(118%) contrast(100%);
+    transition: .3s;
+}
+.main-testimonials__wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+.main-testimonials__list {
+    padding-top: 50px;
+    display: block;
+    width: 10000px;
+    transition: 1s;
+}
+.main-testimonials__item {
+    width: 33.33333%;
+    margin: 0 -4px 0 0;
+    min-height: 330px;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px 15px;
+}
+.main-testimonials__block {
+    background: #F8F9FA;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
+    border-radius: 15px;
+    width: 100%;
+    margin: -55px 0 0;
+    padding: 55px 25px 25px;
+    text-align: center;
+    z-index: -1;
+}
+.main-testimonials__avatar {
+    width: 122px;
+    height: 122px;
+    border: 9px solid rgba(255, 255, 255, 0.57);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main-testimonials__name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 190.2%;
+    color: #2B303E;
+}
+.main-testimonials__date {
+    margin-top: -10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 190.2%;
+    color: #4DB6EE;
+}
+.main-testimonials__description {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 190.2%;
+    color: #2B303E;
+}
+.main-signup,
+.main-signin {
+    background: #F8F9FA;
+    box-shadow: 0px 18px 56px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 50px 20% 60px;
+}
+.main-signup__title,
+.main-signin__title,
+.main-faq__title {
+    font-family: 'Forum', cursive;
+    font-size: 52px;
+    line-height: 128.2%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #2B303E;
+    margin-bottom: 20px;
+}
+.main-signup__form,
+.main-signin__form {
+    width: 100%;
+    max-width: 760px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 50px 15%;
+    border-top: 6px solid #4DB2E9;
+}
+.main-signup__input,
+.main-signin__input{
+    width: 100%;
+    height: 54px;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: .3s;
+    color: rgba(0,0,0,1);
+}
+.main-signup__input:focus,
+.main-signin__input:focus {
+    border: 1px solid #4DB2E9;
+    transition: .3s;
+}
+.main-signup__submit,
+.main-signin__submit {
+    width: 266px;
+    height: 67px;
+    background: #2B303E;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: .3s;
+}
+.main-signup__submit:hover,
+.main-signin__submit:hover {
+    background: #08208c;
+    transition: .3s;
+}
+.main-signin__link {
+    font-size: 16px;
+    line-height: 136.7%;
+    text-decoration-line: underline;
+    color: #2F80ED;
+    transition: .3s;
+}
+.main-faq {
+    background: #F8F9FA;
+    box-shadow: 0px 18px 56px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 50px;
+}
+.main-faq__form {}
+.main-faq__block {}
+.main-faq__section {
+    margin: 0 10px 30px;
+    width: 50%;
+}
+.main-faq__name {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 153.2%;
+    color: #2B303E;
+    margin-bottom: 20px;
+    padding-left: 33px;
+}
+.main-faq__blue {}
+.main-faq__item {
+    padding: 24px 30px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.main-faq__icon {}
+.main-faq__img {
+    margin-right: 30px;
+}
+.main-faq__text {}
+.main-faq__question {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 153.2%;
+    color: #2B303E;
+    margin-top: -5px;
+}
+.main-faq__answer {
+    font-size: 16px;
+    line-height: 153.2%;
+    color: rgba(43, 48, 62, 0.83);
+}
+.main-faq__active {
+    border: 1px dashed #007bff;
+    border-radius: 5px;
+}
+
+
+    /* FOOTER */
 .footer {
     width: 100%;
     height: 100px;
@@ -293,8 +780,11 @@ line-height: 100px;
     border: 4px solid rgba(255, 255, 255, 0.28);
     transition: .3s;
 }
-.footer-social__icon:hover {
+.footer-social__icon.footer-social__icon--youtube {
     background: #4486B0;
+}
+.footer-social__icon:hover {
+    background: #08208c;
     border: 4px solid rgba(255, 255, 255, 0.49);
     transition: .3s;
 }
@@ -334,8 +824,27 @@ line-height: 100px;
     .main-video:before {
         height: 80px;
     }
-    .main-video__title {
+    .main-dream__crown {
+        width: 450px;
+        height: 430px;
+        bottom: -170px;
+    }
+    .main-video__title,
+    .main-goal__title,
+    .main-testimonials__title,
+    .main-signup__title,
+    .main-signin__title,
+    .main-faq__title {
         font-size: 52px;
+    }
+    .main-dream__link {
+        padding: 22px 65px 23px;
+    }
+    .main-faq {
+        padding: 50px 30px;
+    }
+    .main-faq__name {
+        font-size: 28px;
     }
 }
 
@@ -378,10 +887,61 @@ line-height: 100px;
     .main-video__frame {
         width: 100%;
     }
+    .main-dream {
+        width: auto;
+        margin: 50px 15px 90px;
+        padding: 50px 15px 60px;
+    }
+    .main-dream__crown {
+        width: 400px;
+        height: 380px;
+        bottom: -170px;
+    }
     .main-video__text {
         width: 100%;
     }
-    .main-video__title {
+    .main-video__title,
+    .main-goal__title,
+    .main-dream__slogan,
+    .main-testimonials__title,
+    .main-signup__title,
+    .main-signin__title,
+    .main-faq__title {
         font-size: 44px;
+    }
+    .main-dream__item {
+        width: auto;
+        margin-bottom: 40px;
+    }
+    .main-dream__item:last-child {
+         margin-bottom: 0;
+    }
+    .main-testimonials__item {
+        margin-bottom: 40px;
+    }
+    .main-testimonials__item:last-child {
+        margin-bottom: 0;
+    }
+    .main-signup,
+    .main-signup__form {
+        padding: 50px 10%;
+    }
+    .main-faq__section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-dream__bottom--left {
+        display: none;
+    }
+    .main-dream__bottom--right {
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .main-video:before {
+        background-size: inherit;
     }
 }
